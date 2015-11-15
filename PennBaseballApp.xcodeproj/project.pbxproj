@@ -17,6 +17,10 @@
 		6B4509451BE084E000B5C4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4509431BE084E000B5C4E2 /* LaunchScreen.storyboard */; };
 		6B4509501BE084E000B5C4E2 /* PennBaseballAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45094F1BE084E000B5C4E2 /* PennBaseballAppTests.swift */; };
 		6B45095B1BE084E000B5C4E2 /* PennBaseballAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45095A1BE084E000B5C4E2 /* PennBaseballAppUITests.swift */; };
+		6B4717581BF689BF00976412 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4717571BF689BF00976412 /* MenuTableViewController.swift */; };
+		6B8A3D1A1BF5D4E500A1738E /* SortTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBB7051BF5A81200B0BE51 /* SortTableViewController.swift */; };
+		6BE20C801BF4618F004CD0F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20C7F1BF4618F004CD0F9 /* SWRevealViewController.m */; };
+		6BFBB7081BF5B3C000B0BE51 /* BaseballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBB7071BF5B3C000B0BE51 /* BaseballEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B1357D81BEB1F9200DFC4D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		6B1357D81BEB1F9200DFC4D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../FeedViewController.swift; sourceTree = "<group>"; };
 		6B1357DA1BEB202F00DFC4D1 /* Practice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 		6B4509351BE084E000B5C4E2 /* PennBaseballApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennBaseballApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4509381BE084E000B5C4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,12 @@
 		6B4509561BE084E000B5C4E2 /* PennBaseballAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennBaseballAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B45095A1BE084E000B5C4E2 /* PennBaseballAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PennBaseballAppUITests.swift; sourceTree = "<group>"; };
 		6B45095C1BE084E000B5C4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B4717571BF689BF00976412 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		6BE20C7E1BF4618F004CD0F9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		6BE20C7F1BF4618F004CD0F9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		6BE20C811BF461B5004CD0F9 /* PennBaseballApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PennBaseballApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		6BFBB7051BF5A81200B0BE51 /* SortTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewController.swift; sourceTree = "<group>"; };
+		6BFBB7071BF5B3C000B0BE51 /* BaseballEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseballEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +93,6 @@
 		6B45092C1BE084E000B5C4E2 = {
 			isa = PBXGroup;
 			children = (
-				6B1357D81BEB1F9200DFC4D1 /* FeedViewController.swift */,
 				6B4509371BE084E000B5C4E2 /* PennBaseballApp */,
 				6B45094E1BE084E000B5C4E2 /* PennBaseballAppTests */,
 				6B4509591BE084E000B5C4E2 /* PennBaseballAppUITests */,
@@ -104,10 +113,15 @@
 		6B4509371BE084E000B5C4E2 /* PennBaseballApp */ = {
 			isa = PBXGroup;
 			children = (
+				6BD68C191BF4350500C8A46B /* Supporting Files */,
 				6B4509381BE084E000B5C4E2 /* AppDelegate.swift */,
 				6B45093A1BE084E000B5C4E2 /* FirstViewController.swift */,
+				6B1357D81BEB1F9200DFC4D1 /* FeedViewController.swift */,
 				6B45093E1BE084E000B5C4E2 /* Main.storyboard */,
+				6BFBB7051BF5A81200B0BE51 /* SortTableViewController.swift */,
+				6B4717571BF689BF00976412 /* MenuTableViewController.swift */,
 				6B1357DA1BEB202F00DFC4D1 /* Practice.swift */,
+				6BFBB7071BF5B3C000B0BE51 /* BaseballEvent.swift */,
 				6B45093C1BE084E000B5C4E2 /* SecondViewController.swift */,
 				6B4509411BE084E000B5C4E2 /* Assets.xcassets */,
 				6B4509431BE084E000B5C4E2 /* LaunchScreen.storyboard */,
@@ -132,6 +146,16 @@
 				6B45095C1BE084E000B5C4E2 /* Info.plist */,
 			);
 			path = PennBaseballAppUITests;
+			sourceTree = "<group>";
+		};
+		6BD68C191BF4350500C8A46B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BE20C7E1BF4618F004CD0F9 /* SWRevealViewController.h */,
+				6BE20C7F1BF4618F004CD0F9 /* SWRevealViewController.m */,
+				6BE20C811BF461B5004CD0F9 /* PennBaseballApp-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +294,10 @@
 				6B1357D91BEB1F9200DFC4D1 /* FeedViewController.swift in Sources */,
 				6B1357DB1BEB202F00DFC4D1 /* Practice.swift in Sources */,
 				6B45093B1BE084E000B5C4E2 /* FirstViewController.swift in Sources */,
+				6B4717581BF689BF00976412 /* MenuTableViewController.swift in Sources */,
+				6BFBB7081BF5B3C000B0BE51 /* BaseballEvent.swift in Sources */,
+				6BE20C801BF4618F004CD0F9 /* SWRevealViewController.m in Sources */,
+				6B8A3D1A1BF5D4E500A1738E /* SortTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +439,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PennBaseballApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.PennBaseballApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PennBaseballApp/PennBaseballApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,10 +453,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PennBaseballApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.PennBaseballApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PennBaseballApp/PennBaseballApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
