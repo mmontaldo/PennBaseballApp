@@ -13,30 +13,47 @@ class SortTableViewController: UITableViewController {
     
     var SortArray = [String]()
     override func viewDidLoad() {
-        SortArray = ["Smart Sort", "Date", "Likes", "Views", "Practices", "Games", "Tips", "Announcements"]
+        SortArray = ["Date", "Likes", "Views", "Practices", "Games", "Tips", "Announcements"]
     }
+    
+    var selectedIndex : Int = 0
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = SortArray[indexPath.row]
         
-        if (indexPath.row   != 0){
+        if (indexPath.row == selectedIndex){
+            cell.accessoryType = .Checkmark
+        } else {
             cell.accessoryType = .None
         }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //set check marked index
+        selectedIndex = indexPath.row
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SortArray.count
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 55
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var DestVC = segue.destinationViewController as! FeedViewController
         
-        var indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+        let DestVC = segue.destinationViewController as? UINavigationController
         
-        DestVC.varView = indexPath.row
+        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+        
+        if let feedTableController = DestVC?.topViewController as? FeedViewController{
+            feedTableController.varView = indexPath.row
+        }
         
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct BaseballEvent {
+    var type: String?
     var date: String?
     var location: String?
     var title: String?
@@ -17,7 +18,8 @@ struct BaseballEvent {
     var views: Int?
     var dateNum: Int?
     
-    init(date: String?, location: String?, title: String?, likes: Int?, views: Int?, dateNum: Int?){
+    init(type: String?, date: String?, location: String?, title: String?, likes: Int?, views: Int?, dateNum: Int?){
+        self.type = type
         self.date = date
         self.location = location
         self.title = title
