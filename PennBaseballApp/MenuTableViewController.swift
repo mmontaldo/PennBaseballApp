@@ -11,15 +11,15 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    var SortArray = [String]()
+    var MenuArray = [String]()
     override func viewDidLoad() {
-        SortArray = ["Feed", "Archive", "My Profile"]
+        MenuArray = ["Feed", "Baseball School", "Archive", "My Profile"]
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("menu_cell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(MenuArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = SortArray[indexPath.row]
+        cell.textLabel?.text = MenuArray[indexPath.row]
 
         return cell
     }
@@ -29,7 +29,7 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SortArray.count
+        return MenuArray.count
     }
     
 }

@@ -18,6 +18,7 @@ struct BaseballEvent {
     var views: Int?
     var dateNum: Int?
     
+    
     init(type: String?, date: String?, location: String?, title: String?, likes: Int?, views: Int?, dateNum: Int?){
         self.type = type
         self.date = date
@@ -27,4 +28,5 @@ struct BaseballEvent {
         self.views = views
         self.dateNum = dateNum
     }
+
 }

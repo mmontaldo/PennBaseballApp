@@ -26,6 +26,8 @@ class FeedViewController: UITableViewController {
     var onlyTips: Bool = false
     
     var onlyAnnouncements: Bool = false
+    
+    var valueToPass: BaseballEvent?
 
     
     override func viewDidLoad() {
@@ -34,6 +36,8 @@ class FeedViewController: UITableViewController {
         if self.revealViewController() != nil {
             
             baseballEventData = [
+                BaseballEvent(type: "Announcement", date: "3/29/16", location: "Check email from Rosemarie about Tutoring", title:"Announcement", likes: 0, views: 16, dateNum: 32316),
+                BaseballEvent(type: "Practice", date: "3/28/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 3, views: 31, dateNum: 32217),
                 BaseballEvent(type: "Announcement", date: "3/26/16", location: "Get a lift in Monday open hours", title: "Announcement", likes: 0, views: 22, dateNum: 32616),
                 BaseballEvent(type: "Game", date: "3/25/16", location: "Meiklejohn Stadium", title: "Game vs. Princeton", likes: 20, views: 25, dateNum: 32516),
                 BaseballEvent(type: "Announcement", date: "3/24/16", location: "Get to bed early tonight", title: "Announcement", likes: 2, views: 10, dateNum: 32417),
@@ -239,6 +243,25 @@ class FeedViewController: UITableViewController {
         } else {
             return 85
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        valueToPass = baseballEventData[indexPath.row];
+        performSegueWithIdentifier("segue", sender: self);
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "segue") {
+            
+            // initialize new view controller and cast it as your view controller
+            var viewController = segue.destinationViewController as! FeedItemDetailViewController
+            // your new view controller should have property that will store passed value
+            viewController.baseballEvent = valueToPass
+        }
+        
     }
 
 
