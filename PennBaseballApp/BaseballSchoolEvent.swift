@@ -15,6 +15,7 @@ struct BaseballSchoolEvent {
     var date: String?
     var location: String?
     var title: String?
+    var notes: String?
     var likes: Int?
     var views: Int?
     var selfViews: Int?
@@ -25,11 +26,12 @@ struct BaseballSchoolEvent {
     var practiceVideoAffinity = 0.5
     var personalVideoAffinity = 0.8
     
-    init(type: String?, date: String?, location: String?, title: String?, likes: Int?, views: Int?, selfViews: Int?, daysOld: Int?){
+    init(type: String?, date: String?, location: String?, title: String?, notes: String?, likes: Int?, views: Int?, selfViews: Int?, daysOld: Int?){
         self.type = type
         self.date = date
         self.location = location
         self.title = title
+        self.notes = notes
         self.likes = likes
         self.views = views
         self.selfViews = selfViews

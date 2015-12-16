@@ -18,7 +18,7 @@ class FeedViewController: UITableViewController {
     var varView = Int()
     
     var baseballEventData : [BaseballEvent] = []
-    
+
     var onlyPractices: Bool = false
     
     var onlyGames: Bool = false
@@ -35,25 +35,41 @@ class FeedViewController: UITableViewController {
         
         if self.revealViewController() != nil {
             
+            let summaryData : [String] = [
+                "Rosemarie sent an email about academic eligability. Please read and respond today. If you are taking less than 4 classes this semester please set up a time to talk with Rosemarie.",
+                "Today's practice will be a short walk through of bunt plays and offensive signs and then finish with infield defense and BP.",
+                "Christi will have a lift written on the board. Please find a time between 10am-2pm on Monday to get to Weiss.",
+                "Ivy League rivals face off today at Meiklejohn Stadium.",
+                "Get to bed early.",
+                "Rosemarie sent an email about academic tutoring. Please read and respond today. If you are taking less than 4 classes this semester please set up a time to talk with Rosemarie.",
+                ]
+            
+            let equipmentData : [String] = ["Bring all."]
+            
+            let reportTimeData : [String] = ["Pitchers: 3:00pm"]
+            
+            let reportTimePPData : [String] = ["Position Players: 2:30pm"]
+            
+
             baseballEventData = [
-                BaseballEvent(type: "Announcement", date: "3/29/16", location: "Check email from Rosemarie about Tutoring", title:"Announcement", likes: 0, views: 16, dateNum: 32316),
-                BaseballEvent(type: "Practice", date: "3/28/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 3, views: 31, dateNum: 32217),
-                BaseballEvent(type: "Announcement", date: "3/26/16", location: "Get a lift in Monday open hours", title: "Announcement", likes: 0, views: 22, dateNum: 32616),
-                BaseballEvent(type: "Game", date: "3/25/16", location: "Meiklejohn Stadium", title: "Game vs. Princeton", likes: 20, views: 25, dateNum: 32516),
-                BaseballEvent(type: "Announcement", date: "3/24/16", location: "Get to bed early tonight", title: "Announcement", likes: 2, views: 10, dateNum: 32417),
-                BaseballEvent(type: "Game", date: "3/24/16", location: "Meiklejohn Stadium", title: "Game vs. Cornell", likes: 22, views: 28, dateNum: 32416),
-                BaseballEvent(type: "Announcement", date: "3/23/16", location: "Check email from Rosemarie about Tutoring", title:"Announcement", likes: 0, views: 16, dateNum: 32316),
-                BaseballEvent(type: "Practice", date: "3/22/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 3, views: 31, dateNum: 32217),
-                BaseballEvent(type: "Announcement", date: "3/22/16", location: "Team meeting at 3:00pm today", title: "Announcement", likes: 2, views: 35, dateNum: 32216),
-                BaseballEvent(type: "Practice", date: "3/21/16", location: "The Bubble at Penn Park", title: "Team Practice", likes: 0, views: 32, dateNum: 32117),
-                BaseballEvent(type: "Tip", date: "3/21/16", location: "Baseball America", title: "Tip of the Day", likes: 9, views: 25, dateNum: 32116),
-                BaseballEvent(type: "Practice", date: "3/20/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 4, views: 23, dateNum: 32016),
-                BaseballEvent(type: "Announcement", date: "3/19/16", location: "Today's Practice is cancelled", title: "Announcement", likes: 6, views: 34, dateNum: 31916),
-                BaseballEvent(type: "Practice", date: "3/18/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 5, views: 33, dateNum: 31817),
-                BaseballEvent(type: "Tip", date: "3/18/16", location: "Youtube Video", title: "Tip of the Day", likes: 13, views: 23, dateNum: 31816),
-                BaseballEvent(type: "Game", date: "3/17/16", location: "Meiklejohn Stadium", title: "Game vs. Dartmouth", likes: 12, views: 22, dateNum: 31716),
-                BaseballEvent(type: "Announcement", date: "3/16/16", location: "Pitchers who threw today", title: "Announcement", likes: 1, views: 16, dateNum: 31616),
-                BaseballEvent(type: "Game", date: "3/15/16", location: "Meiklejohn Stadium", title: "Game vs. Harvard", likes: 24, views: 32, dateNum: 31516)]
+                BaseballEvent(type: "Announcement", date: "3/29/16", location: "Check email from Rosemarie", title:"Announcement", likes: 0, views: 16, dateNum: 32316, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Practice", date: "3/28/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 3, views: 31, dateNum: 32217, summary: summaryData[1], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/26/16", location: "Monday Open Hours Lift", title: "Announcement", likes: 0, views: 22, dateNum: 32616, summary: summaryData[2], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Game", date: "3/25/16", location: "Meiklejohn Stadium", title: "Game vs. Princeton", likes: 20, views: 25, dateNum: 32516, summary: summaryData[3], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/24/16", location: "Get to bed early tonight", title: "Announcement", likes: 2, views: 10, dateNum: 32417, summary: summaryData[4], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Game", date: "3/24/16", location: "Meiklejohn Stadium", title: "Game vs. Cornell", likes: 22, views: 28, dateNum: 32416, summary: summaryData[3], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/23/16", location: "Check email from Rosemarie about Tutoring", title:"Announcement", likes: 0, views: 16, dateNum: 32316, summary: summaryData[5], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Practice", date: "3/22/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 3, views: 31, dateNum: 32217, summary: summaryData[1], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/22/16", location: "Team meeting at 3:00pm today", title: "Announcement", likes: 2, views: 35, dateNum: 32216, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Practice", date: "3/21/16", location: "The Bubble at Penn Park", title: "Team Practice", likes: 0, views: 32, dateNum: 32117, summary: summaryData[1], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Tip", date: "3/21/16", location: "Baseball America", title: "Tip of the Day", likes: 9, views: 25, dateNum: 32116, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Practice", date: "3/20/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 4, views: 23, dateNum: 32016, summary: summaryData[1], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/19/16", location: "Today's Practice is cancelled", title: "Announcement", likes: 6, views: 34, dateNum: 31916, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Practice", date: "3/18/16", location: "Meiklejohn Stadium", title: "Team Practice", likes: 5, views: 33, dateNum: 31817, summary: summaryData[1], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Tip", date: "3/18/16", location: "Youtube Video", title: "Tip of the Day", likes: 13, views: 23, dateNum: 31816, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Game", date: "3/17/16", location: "Meiklejohn Stadium", title: "Game vs. Dartmouth", likes: 12, views: 22, dateNum: 31716, summary: summaryData[3], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Announcement", date: "3/16/16", location: "Pitchers who threw today", title: "Announcement", likes: 1, views: 16, dateNum: 31616, summary: summaryData[0], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0]),
+                BaseballEvent(type: "Game", date: "3/15/16", location: "Meiklejohn Stadium", title: "Game vs. Harvard", likes: 24, views: 32, dateNum: 31516, summary: summaryData[3], equipment: equipmentData[0], reportTime: reportTimeData[0], reportTimePP: reportTimePPData[0])]
             
             let logo = UIImage(named: "PennBaseballTitle") as UIImage?
             let imageView = UIImageView(image:logo)

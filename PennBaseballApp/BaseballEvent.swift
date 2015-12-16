@@ -17,9 +17,13 @@ struct BaseballEvent {
     var likes: Int?
     var views: Int?
     var dateNum: Int?
+    var summary: String?
+    var equipment: String?
+    var reportTime: String?
+    var reportTimePP: String?
     
     
-    init(type: String?, date: String?, location: String?, title: String?, likes: Int?, views: Int?, dateNum: Int?){
+    init(type: String?, date: String?, location: String?, title: String?, likes: Int?, views: Int?, dateNum: Int?, summary: String?, equipment: String?, reportTime: String?, reportTimePP: String){
         self.type = type
         self.date = date
         self.location = location
@@ -27,6 +31,10 @@ struct BaseballEvent {
         self.likes = likes
         self.views = views
         self.dateNum = dateNum
+        self.summary = summary
+        self.equipment = equipment
+        self.reportTime = reportTime
+        self.reportTimePP = reportTimePP
     }
 
 }

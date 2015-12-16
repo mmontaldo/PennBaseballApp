@@ -21,48 +21,69 @@ class FeedItemDetailViewController: UIViewController {
     @IBOutlet var summaryMessageLabel: UILabel!
     
     @IBOutlet var equipmentMessageLabel: UILabel!
-    
+  
     @IBOutlet var reportTimeMessageLabel: UILabel!
     
     @IBOutlet var locationImage: UIImageView!
     
-    @IBOutlet var eventImage: UIImageView!
+    @IBOutlet var summaryLabel: UILabel!
+    
+    @IBOutlet var equipmentLabel: UILabel!
+    
+    @IBOutlet var reportTimeLabel: UILabel!
+    
+    @IBOutlet var reportTimeMessagePPLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Date Label
         dateLabel.text = baseballEvent!.date
-        dateLabel.hidden = false
-        if (baseballEvent!.type == "Game"){
-            dateLabel.textColor = UIColor.whiteColor()
-            //dateLabel.shadowColor = UIColor.blueColor()
-            dateLabel.font = UIFont(name: dateLabel.font.fontName, size: 22)
-        } else {
-            dateLabel.textColor = UIColor.blackColor()
-            //dateLabel.shadowColor = UIColor.blueColor()
-            dateLabel.font = UIFont(name: dateLabel.font.fontName, size: 18)
-        }
+        dateLabel.font = UIFont(name: dateLabel.font.fontName, size: 18)
         
+        //Title Label
+        titleLabel.text = baseballEvent!.title
+       // titleLabel.textColor = UIColor.blackColor()
+        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 18)
+        
+        //Location Label
         locationLabel.text = baseballEvent!.location
-        if (baseballEvent!.type == "Game"){
-            locationLabel.textColor = UIColor.whiteColor()
-            //locationLabel.shadowColor = UIColor.blueColor()
-            locationLabel.font = UIFont(name: locationLabel.font.fontName, size: 18)
+        if (baseballEvent!.type == "Announcement" || baseballEvent!.type == "Tip"){
+            locationLabel.font = UIFont(name: locationLabel.font.fontName, size: 22)
         } else {
-            locationLabel.textColor = UIColor.blackColor()
-            //dateLabel.shadowColor = UIColor.blueColor()
             locationLabel.font = UIFont(name: locationLabel.font.fontName, size: 14)
         }
         
-        titleLabel.text = baseballEvent!.title
-        if (baseballEvent!.type == "Game"){
-            titleLabel.textColor = UIColor.whiteColor()
-            //titleLabel.shadowColor = UIColor.blueColor()
-            titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 22)
+        //Location image
+        if (baseballEvent!.type == "Announcement" || baseballEvent!.type == "Tip"){
+            locationImage.hidden = true
         } else {
-            titleLabel.textColor = UIColor.blackColor()
-            //dateLabel.shadowColor = UIColor.blueColor()
-            titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 18)
+            locationImage.hidden = false
+            locationImage.image = UIImage(named:"location.png")
+        }
+        
+        //Summary Message
+        if (baseballEvent!.type == "Announcement" || baseballEvent!.type == "Tip"){
+            summaryMessageLabel.hidden = true
+            equipmentMessageLabel.hidden = true
+            reportTimeMessageLabel.hidden = true
+            reportTimeMessagePPLabel.hidden = true
+            summaryLabel.hidden = true
+            equipmentLabel.hidden = true
+            reportTimeLabel.hidden = true
+        } else {
+            summaryLabel.hidden = false
+            equipmentLabel.hidden = false
+            reportTimeLabel.hidden = false
+            summaryMessageLabel.hidden = false
+            equipmentMessageLabel.hidden = false
+            reportTimeMessageLabel.hidden = false
+            reportTimeMessagePPLabel.hidden = false
+            
+            summaryMessageLabel.text = baseballEvent!.summary
+            equipmentMessageLabel.text = baseballEvent!.equipment
+            reportTimeMessageLabel.text = baseballEvent!.reportTime
+            reportTimeMessagePPLabel.text = baseballEvent!.reportTimePP
         }
         
         
