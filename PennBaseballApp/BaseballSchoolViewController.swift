@@ -94,11 +94,7 @@ class BaseballSchoolViewController: UITableViewController {
         
         let event = baseballEventData[indexPath.row] as BaseballSchoolEvent
         
-        if (event.date == "3/18/16"){
-            cell.backgroundColor = UIColor.lightGrayColor()
-        } else {
-            cell.backgroundColor = UIColor.whiteColor()
-        }
+
         if let dateLabel = cell.viewWithTag(2) as? UILabel {
             dateLabel.text = event.date
                 dateLabel.textColor = UIColor.blackColor()
