@@ -23,13 +23,18 @@ class BaseballSchoolViewController: UITableViewController {
         if self.revealViewController() != nil {
             
             baseballEventData = [
-                BaseballSchoolEvent(type: "Personal Video", date: "3/23/16", location: "Mitch Montaldo", title: "Personal Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 4, views: 15, selfViews: 10, daysOld: 1),
-                BaseballSchoolEvent(type: "Tip", date: "3/18/16", location: "Youtube Video", title: "Hitting Lesson", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 15, views: 23, selfViews: 10, daysOld: 2),
-                BaseballSchoolEvent(type: "Practice Video", date: "3/24/16", location: "Bunting Groups", title: "Today's Practice Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 3, views: 15, selfViews: 3, daysOld: 0),
-                BaseballSchoolEvent(type: "Personal Video", date: "3/22/16", location: "Ronnie Glenn", title: "Pitching Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 7, views: 23, selfViews: 1, daysOld: 1),
+                BaseballSchoolEvent(type: "Personal Video", date: "3/23/16", location: "Mitch Montaldo", title: "Hitting Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 10, views: 23, selfViews: 8, daysOld: 1),
+                
+                BaseballSchoolEvent(type: "Personal Video", date: "3/22/16", location: "Ronnie Glenn", title: "Pitching Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 10, views: 20, selfViews: 6, daysOld: 1),
+                
+                BaseballSchoolEvent(type: "Personal Video", date: "3/16/16", location: "Mitch Montaldo", title: "Hitting Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 10, views: 16, selfViews: 5, daysOld: 1),
+                
+                BaseballSchoolEvent(type: "Tip", date: "3/18/16", location: "Youtube Video", title: "Hitting Lesson", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 10, views: 16, selfViews: 4, daysOld: 1),
+                
+                BaseballSchoolEvent(type: "Practice Video", date: "3/24/16", location: "Bunting Groups", title: "Today's Practice Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 10, views: 15, selfViews: 3, daysOld: 0),
+                
                 BaseballSchoolEvent(type: "Tip", date: "3/21/16", location: "Baseball America", title: "5 Ways to Improve Pitching Mechanics", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 12, views: 21, selfViews: 2, daysOld: 2),
                 BaseballSchoolEvent(type: "Practice Video", date: "3/17/16", location: "Bunting Groups", title: "Today's Practice Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 13, views: 23, selfViews: 3, daysOld: 3),
-                BaseballSchoolEvent(type: "Personal Video", date: "3/16/16", location: "Mitch Montaldo", title: "Hitting Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 13, views: 23, selfViews: 3, daysOld: 4),
                 BaseballSchoolEvent(type: "Personal Video", date: "3/15/16", location: "Connor Cuff", title: "Pitching Video", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 13, views: 23, selfViews: 3, daysOld: 5),
                 BaseballSchoolEvent(type: "Tip", date: "3/14/16", location: "Baseball America", title: "Improve Pitching Mechanics", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 9, views: 25, selfViews: 3, daysOld: 5),
                 BaseballSchoolEvent(type: "Tip", date: "3/13/16", location: "Youtube Video", title: "Hitting Lesson with Tony Gwynn", notes: "-Sliding hips, need to keep your weight back. Keep working on improving your balance through the entire motion.", likes: 13, views: 23, selfViews: 3, daysOld: 10)]
@@ -89,6 +94,11 @@ class BaseballSchoolViewController: UITableViewController {
         
         let event = baseballEventData[indexPath.row] as BaseballSchoolEvent
         
+        if (event.date == "3/18/16"){
+            cell.backgroundColor = UIColor.lightGrayColor()
+        } else {
+            cell.backgroundColor = UIColor.whiteColor()
+        }
         if let dateLabel = cell.viewWithTag(2) as? UILabel {
             dateLabel.text = event.date
                 dateLabel.textColor = UIColor.blackColor()
@@ -111,8 +121,23 @@ class BaseballSchoolViewController: UITableViewController {
                 locationImage.hidden = true
         }
         if let eventImage = cell.viewWithTag(5) as? UIImageView {
-                eventImage.hidden = false
+            eventImage.hidden = false
+            if (event.location == "Mitch Montaldo"){
+                eventImage.image = UIImage(named:"hitting_video.png")
+            } else if (event.location == "Youtube Video"){
+                eventImage.image = UIImage(named:"youtube.png")
+            } else if (event.location == "Ronnie Glenn"){
+                eventImage.image = UIImage(named:"pitching_video.png")
+            } else if (event.location == "Connor Cuff"){
+                eventImage.image = UIImage(named:"pitching_video_cuff.png")
+            } else if (event.location == "Baseball America"){
+                eventImage.image = UIImage(named:"baseball_america.png")
+            } else if (event.location == "Bunting Groups"){
+                eventImage.image = UIImage(named:"yurkow.png")
+            } else {
                 eventImage.image = UIImage(named:"dailyTipAvatar.png")
+            }
+
         }
         
         return cell

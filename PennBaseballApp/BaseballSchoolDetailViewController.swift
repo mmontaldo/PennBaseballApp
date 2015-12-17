@@ -40,6 +40,23 @@ class BaseballSchoolDetailViewController: UIViewController {
         //Notes Label
         notesMessageLabel.text = baseballSchoolEvent!.notes
         titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 18)
+        
+        //Video Image
+        if (baseballSchoolEvent!.location == "Mitch Montaldo"){
+            videoImage.image = UIImage(named:"hitting_video_play.png")
+        } else if (baseballSchoolEvent!.location == "Youtube Video"){
+            videoImage.image = UIImage(named:"copy_youtube_play.png")
+        } else if (baseballSchoolEvent!.location == "Ronnie Glenn"){
+            videoImage.image = UIImage(named:"copy_pitching_play.png")
+        } else if (baseballSchoolEvent!.location == "Connor Cuff"){
+            videoImage.image = UIImage(named:"copy_pitching_cuff_play.png")
+        } else if (baseballSchoolEvent!.location == "Baseball America"){
+            videoImage.image = UIImage(named:"copy_baseball_america_play.png")
+        } else if (baseballSchoolEvent!.location == "Bunting Groups"){
+            videoImage.image = UIImage(named:"copy_bunting_play.png")
+        } else {
+            videoImage.image = UIImage(named:"dailyTipAvatar.png")
+        }
 
     }
 

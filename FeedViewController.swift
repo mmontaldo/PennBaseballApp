@@ -28,10 +28,14 @@ class FeedViewController: UITableViewController {
     var onlyAnnouncements: Bool = false
     
     var valueToPass: BaseballEvent?
+    
+    var gamePicCounter: Int?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gamePicCounter = 0
         
         if self.revealViewController() != nil {
             
@@ -228,8 +232,21 @@ class FeedViewController: UITableViewController {
                 eventImage.image = UIImage(named:"practiceAvatar.png")
             } else if (event.type == "Game"){
                 eventImage.hidden = true
-                var imageView = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height))
-                let image = UIImage(named: "gameBkgdRonnie.png")
+                let imageView = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height));
+                var image: UIImage!;
+                if (event.title == "Game vs. Princeton"){
+                    image = UIImage(named: "gameBkgdRonnie.png")
+                    gamePicCounter = Int(gamePicCounter!) + 1;
+                } else if (event.title == "Game vs. Cornell"){
+                    image = UIImage(named: "game_background_reitcheck.png")
+                    gamePicCounter = 0;
+                } else if (event.title == "Game vs. Dartmouth"){
+                    image = UIImage(named: "game_background_greskoff.png")
+                    gamePicCounter = 0;
+                } else if (event.title == "Game vs. Harvard"){
+                    image = UIImage(named: "game_background_mckinnon.png")
+                    gamePicCounter = 0;
+                }
                 imageView.image = image
                 cell.backgroundView = UIView()
                 cell.backgroundView!.addSubview(imageView)
